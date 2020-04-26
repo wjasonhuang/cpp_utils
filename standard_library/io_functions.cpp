@@ -17,11 +17,10 @@ vector<State> ParseLine(string line) {
     char c;
     vector<State> row;
     while (sline >> n >> c && c == ',') {
-      if (n == 0) {
+      if (n == 0)
         row.push_back(State::kEmpty);
-      } else {
+      else
         row.push_back(State::kObstacle);
-      }
     }
     return row;
 }
@@ -40,7 +39,7 @@ vector<vector<State>> ReadBoardFile(string path) {
 }
 
 string CellString(State cell) {
-  switch(cell) {
+  switch (cell) {
     case State::kObstacle: return "⛰️   ";
     default: return "0   ";
   }
