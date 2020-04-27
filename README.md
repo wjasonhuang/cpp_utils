@@ -10,6 +10,6 @@
 # Compile Multiple Files
 - g++ ./code/main.cpp ./code/increment_and_sum.cpp ./code/vect_add_one.cpp && ./a.out
 - Comple a project
-	g++ -c *.cpp
-	g++ *.o
-	./a.out
+    g++ -c *.cpp
+    g++ *.o
+    ./a.out
