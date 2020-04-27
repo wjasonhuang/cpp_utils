@@ -49,7 +49,6 @@ vector::max_size()      maximum potential size the container can reach due to kn
 
 #include <iostream>
 #include <vector>
-
 using namespace std;
 
 int main()
