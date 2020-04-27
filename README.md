@@ -13,6 +13,7 @@
     
     // Compile in steps
     g++ -c *.cpp    // preprocessor runs and executes any statement beginning with #, such as #include statements
+                    // only updated .cpp files need to recompile in this step
     g++ *.o         // object files are "linked" together to make a single executable
     ./a.out         // a.out is the executable
 
