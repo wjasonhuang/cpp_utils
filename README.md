@@ -9,7 +9,7 @@
 
 # Compile Multiple Files
     // Compile all at once
-    g++ ./code/main.cpp ./code/increment_and_sum.cpp ./code/vect_add_one.cpp && ./a.out
+    g++ ./main.cpp ./code1.cpp ./code2.cpp && ./a.out
     
     // Compile in steps
     g++ -c *.cpp    // preprocessor runs and executes any statement beginning with #, such as #include statements
