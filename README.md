@@ -8,6 +8,7 @@
 - Using it would include a lot of unnecessary stuff and increases compilation time.
 
 # Compile Multiple Files
+- Compile command
     // Compile all at once
     g++ ./main.cpp ./code1.cpp ./code2.cpp && ./a.out
     
