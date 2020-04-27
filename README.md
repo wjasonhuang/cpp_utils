@@ -8,10 +8,9 @@
 - Using it would include a lot of unnecessary stuff and increases compilation time.
 
 # Compile Multiple Files
-- g++ ./code/main.cpp ./code/increment_and_sum.cpp ./code/vect_add_one.cpp && ./a.out
-- Compile a project
-```
-g++ -c *.cpp
-g++ *.o
-./a.out
-```
+`g++ ./code/main.cpp ./code/increment_and_sum.cpp ./code/vect_add_one.cpp && ./a.out`
+OR
+`g++ -c *.cpp`
+`g++ *.o`
+`./a.out`
+
