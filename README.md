@@ -22,3 +22,6 @@
 * &
     * if it appears on the left side of an equation (e.g. when declaring a variable), it means that the variable is declared as a reference
     * if the & appears on the right side of an equation, or before a previously defined variable, it is used to return a memory address
+* *
+    * a pointer can be declared by using the * operator in the declaration to store memory address, e.g. int* i
+    * to retrieve the object a pointer is pointing tomthe * symbol can be used again, e.g. *i
