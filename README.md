@@ -26,3 +26,5 @@
     * a pointer can be declared by using the * operator in the declaration to store memory address, e.g. `int *i`
     * in both C and C++, the * binds to the declarator, not the type specifier, e.g. `int *p, *q, *r;`
     * to retrieve the object a pointer is pointing tomthe * symbol can be used again, e.g. `*i`
+    * cp a pointer to a object, cp->func() and (*cp).func() are equivalent
+
