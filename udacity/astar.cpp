@@ -66,7 +66,7 @@ void CellSort(vector<vector<int>> *v) {
 }
 
 
-// Calculate the manhattan distance
+// Calculate the Manhattan distance
 int Heuristic(int x1, int y1, int x2, int y2) {
   return abs(x2 - x1) + abs(y2 - y1);
 }
