@@ -3,58 +3,37 @@
 #include <sstream>
 #include <string>
 #include <vector>
-using std::cout;
-using std::ifstream;
-using std::istringstream;
-using std::string;
-using std::vector;
+using namespace std;
 
-enum class State {kEmpty, kObstacle};
-
-vector<State> ParseLine(string line) {
-    istringstream sline(line);
+vector<vector<int>> ReadBoardFile(string path) {
+    ifstream myfile(path);
+    vector<vector<int>> board{};
     int n;
     char c;
-    vector<State> row;
-    while (sline >> n >> c && c == ',') {
-      if (n == 0)
-        row.push_back(State::kEmpty);
-      else
-        row.push_back(State::kObstacle);
+
+    if (myfile) {
+        string line;
+        while (getline(myfile, line)) {
+            istringstream sline(line);
+            vector<int> row;
+            while (sline >> n >> c && c == ',') row.push_back(n);
+            board.push_back(row);
+        }
     }
-    return row;
+    return board;
 }
 
-vector<vector<State>> ReadBoardFile(string path) {
-  ifstream myfile (path);
-  vector<vector<State>> board{};
-  if (myfile) {
-    string line;
-    while (getline(myfile, line)) {
-      vector<State> row = ParseLine(line);
-      board.push_back(row);
+void PrintBoard(const vector<vector<int>> board, string path) {
+    ofstream myfile(path);
+    for (int i = 0; i < board.size(); i++) {
+        for (int j = 0; j < board[i].size(); j++)
+            myfile << board[i][j];
+        myfile << "\n";
     }
-  }
-  return board;
-}
-
-string CellString(State cell) {
-  switch (cell) {
-    case State::kObstacle: return "⛰️   ";
-    default: return "0   ";
-  }
-}
-
-void PrintBoard(const vector<vector<State>> board) {
-  for (int i = 0; i < board.size(); i++) {
-    for (int j = 0; j < board[i].size(); j++) {
-      cout << CellString(board[i][j]);
-    }
-    cout << "\n";
-  }
+    myfile.close();
 }
 
 int main() {
-  auto board = ReadBoardFile("board.txt");
-  PrintBoard(board);
+    auto board = ReadBoardFile("board.in");
+    PrintBoard(board, "board.out");
 }
