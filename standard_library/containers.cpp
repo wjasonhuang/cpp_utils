@@ -97,9 +97,10 @@ void map_examples() {
     a.erase('b');
     a['d'] = 4;
     a.insert(pair<char, int>('z', 26));
+    cout << "key 'e': count " << a.count('e') << ", value " << a['e'] << "\n";
     for (map<char, int>::iterator it = a.begin(); it != a.end(); it++)
         cout << it->first << " => " << it->second << "\n";
-    cout << "a['e'] count: " << a.count('e') << ", value: " << a['e'] << "\n";
+    cout << "map::find('f') == map::end()? " << (a.find('f') == a.end()) << "\n";
 }
 
 
