@@ -86,7 +86,8 @@ map::begin() / map::end() / map::rbegin() / map::rend()
 map::empty() / map::size()
 
 map::insert(pair<type, type>(key, val))
-map::erase(iterator position / const key_type& / iterator first, iterator last)   removes a single element or [first, last)
+map::erase(iterator position / const key_type& / iterator first, iterator last)
+    removes a single element / removes all elements with target key / elements in range[first, last)
 map::clear()
 
 map::find(const key_type&)              returns an iterator to the element, map::end() if key is not found
@@ -109,11 +110,12 @@ void map_examples() {
 
     cout << "multimap examples:\n";
     multimap<char, int> ma = {{'a', 1}, {'b', 1}, {'b', 2}, {'c', 3}};
-    for (multimap<char, int>::iterator it = ma.begin(); it != ma.end(); it++)
-        cout << it->first << " => " << it->second << "\n";
     auto range = ma.equal_range('b');
     cout << "key 'b' range:" << range.first->first << " => " << range.first->second << "\n";
     cout << "              " << range.second->first << " => " << range.second->second << "\n";
+    ma.erase('b');
+    for (multimap<char, int>::iterator it = ma.begin(); it != ma.end(); it++)
+        cout << it->first << " => " << it->second << "\n";
 }
 
 
