@@ -34,9 +34,10 @@ using namespace std;
 /*
 http://www.cplusplus.com/reference/vector/vector/
 
-vector<type> variable_name (number_of_elements)
-vector<type> variable_name {element1, element2, ...}
-vector<type>::iterator iterator_name
+vector<type> name (size_type n, const value_type& val)
+vector<type> name (const vector& x)
+vector<type> name {element1, element2, ...}
+vector<type>::iterator
 
 vector::begin()         returns an iterator to point at the first element of a C++ vector
 vector::end()           returns an iterator to point at past-the-end element of a C++ vector
@@ -78,8 +79,8 @@ map:        ordered, unique keys, implemented using Red-Black tree
             insert / erase / find O(log N)
 multimap:   similar to map except multiple elements can have equivalent keys
 
-map<type, type> variable_name {{key1, value1}, {key2, value2}, ...}
-map<type, type>::iterator iterator_name
+map<type, type> name {{key1, value1}, {key2, value2}, ...}
+map<type, type>::iterator
 
 map::begin() / map::end() / map::rbegin() / map::rend()
 
