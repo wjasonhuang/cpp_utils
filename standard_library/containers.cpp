@@ -57,7 +57,7 @@ vector::clear()         removes all elements
 
 #include <vector>
 void vector_examples() {
-    cout << "Vector Examples:\n";
+    cout << "vector examples:\n";
     vector<int> a = {101, 102, 103};
     for (auto i : a)
         cout << "1: " << i << "\n";
@@ -73,7 +73,10 @@ void vector_examples() {
 
 
 /*
-http://www.cplusplus.com/reference/map/map/
+http://www.cplusplus.com/reference/map/
+map:        ordered, unique keys, implemented using Red-Black tree
+            insert / erase / find O(log N)
+multimap:   similar to map except multiple elements can have equivalent keys
 
 map<type, type> variable_name {{key1, value1}, {key2, value2}, ...}
 map<type, type>::iterator iterator_name
@@ -86,13 +89,16 @@ map::insert(pair<type, type>(key, val))
 map::erase(iterator position / const key_type& / iterator first, iterator last)   removes a single element or [first, last)
 map::clear()
 
-map::find(const key_type&)          returns an iterator to the element
-map::count(const key_type&)         returns 1 if the element is found or 0 otherwise
+map::find(const key_type&)              returns an iterator to the element, map::end() if key is not found
+map::count(const key_type&)             returns 1 if the element is found or 0 otherwise
+map::lower_bound(const key_type&)       returns an iterator to the first element in the container whose key >= target key
+map::upper_bound(const key_type&)       returns an iterator to the first element in the container whose key > target key
+map::equal_range(const key_type&)       returns pair<map::lower_bound, map::upper_bound>
 */
 
 #include <map>
 void map_examples() {
-    cout << "Map Examples:\n";
+    cout << "map examples:\n";
     map<char, int> a = {{'a', 1}, {'b', 2}, {'c', 3}};
     a.erase('b');
     a['d'] = 4;
@@ -100,11 +106,29 @@ void map_examples() {
     cout << "key 'e': count " << a.count('e') << ", value " << a['e'] << "\n";
     for (map<char, int>::iterator it = a.begin(); it != a.end(); it++)
         cout << it->first << " => " << it->second << "\n";
-    cout << "map::find('f') == map::end()? " << (a.find('f') == a.end()) << "\n";
+
+    cout << "multimap examples:\n";
+    multimap<char, int> ma = {{'a', 1}, {'b', 1}, {'b', 2}, {'c', 3}};
+    for (multimap<char, int>::iterator it = ma.begin(); it != ma.end(); it++)
+        cout << it->first << " => " << it->second << "\n";
+    auto range = ma.equal_range('b');
+    cout << "key 'b' range:" << range.first->first << " => " << range.first->second << "\n";
+    cout << "              " << range.second->first << " => " << range.second->second << "\n";
+}
+
+
+/*
+http://www.cplusplus.com/reference/set/
+set:        similar to map except value is also the key
+multiset:   similar to multimap except value is also the key
+*/
+#include <set>
+void set_examples() {
 }
 
 
 int main() {
     vector_examples();
     map_examples();
+    set_examples();
 }
