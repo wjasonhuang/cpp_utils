@@ -5,4 +5,5 @@ https://www.udacity.com/course/c-plus-plus-nanodegree--nd213
 https://github.com/udacity/CppND-Route-Planning-Project
 
 ## System Monitor
-https://github.com/udacity/CppND-System-Monitor
+* https://github.com/udacity/CppND-System-Monitor
+* http://man7.org/linux/man-pages/man5/proc.5.html
