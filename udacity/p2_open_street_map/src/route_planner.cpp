@@ -34,7 +34,7 @@ float RoutePlanner::CalculateHValue(RouteModel::Node const *node) {
 
 void RoutePlanner::AddNeighbors(RouteModel::Node *current_node) {
     current_node->FindNeighbors();
-    for (RouteModel::Node *node : current_node->neighbors) {
+    for (auto node : current_node->neighbors) {
         if (node->visited) continue;
         node->parent = current_node;
         node->g_value = current_node->g_value + current_node->distance(*node);
@@ -103,7 +103,7 @@ void RoutePlanner::AStarSearch() {
         current_node = this->NextNode();
         if (current_node == end_node) {
             this->m_Model.path = this->ConstructFinalPath(current_node);
-            return;
+            break;
         }
         this->AddNeighbors(current_node);
     }
