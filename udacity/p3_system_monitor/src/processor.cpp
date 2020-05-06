@@ -12,7 +12,7 @@ float Processor::Utilization() {
   vector<string> info = LinuxParser::CpuUtilization();
   vector<int> new_info_;
   float CPU_percentage;
-  for (int i = 1; i < info.size(); i++) new_info_.push_back(std::stoi(info[i]));
+  for (size_t i = 1; i < info.size(); i++) new_info_.push_back(std::stoi(info[i]));
   if (info_.size() == 10 && new_info_.size() == 10) {
     int prev_idle, prev_non_idle, prev_total;
     int idle, non_idle, total;
