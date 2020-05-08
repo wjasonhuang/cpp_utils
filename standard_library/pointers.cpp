@@ -13,7 +13,7 @@
 
 
 #include <iostream>
-using namespace std;
+#include <string>
 
 
 /*
@@ -47,39 +47,39 @@ public:
 
 void smart_pointers_examples() {
     {
-        unique_ptr<MyClass> myClass1(new MyClass());
-        unique_ptr<MyClass> myClass2(new MyClass("String 2"));
+        std::unique_ptr<MyClass> myClass1(new MyClass());
+        std::unique_ptr<MyClass> myClass2(new MyClass("String 2"));
         myClass1->setText("String 1");
         *myClass1 = *myClass2;
-        cout << "Objects have stack addresses " << myClass1.get() << " and " << myClass2.get() << endl;
+        std::cout << "Objects have stack addresses " << myClass1.get() << " and " << myClass2.get() << std::endl;
     }
 
-    shared_ptr<int> shared1(new int);
-    cout << "shared pointer count = " << shared1.use_count() << std::endl;
+    std::shared_ptr<int> shared1(new int);
+    std::cout << "shared pointer count = " << shared1.use_count() << std::endl;
     {
-        shared_ptr<int> shared2 = shared1;
-        cout << "shared pointer count = " << shared1.use_count() << std::endl;
+        std::shared_ptr<int> shared2 = shared1;
+        std::cout << "shared pointer count = " << shared1.use_count() << std::endl;
     }
-    cout << "shared pointer count = " << shared1.use_count() << std::endl;
+    std::cout << "shared pointer count = " << shared1.use_count() << std::endl;
     shared1.reset(new int);
-    cout << "shared pointer count = " << shared1.use_count() << std::endl;
+    std::cout << "shared pointer count = " << shared1.use_count() << std::endl;
 
     // weak pointers do not increase the reference count
-    shared_ptr<int> mySharedPtr(new int);
-    cout << "new shared pointer count = " << mySharedPtr.use_count() << std::endl;
-    weak_ptr<int> myWeakPtr1(mySharedPtr);
-    weak_ptr<int> myWeakPtr2(myWeakPtr1);
-    cout << "after adding weak pointers, shared pointer count = " << mySharedPtr.use_count() << std::endl;
+    std::shared_ptr<int> mySharedPtr(new int);
+    std::cout << "new shared pointer count = " << mySharedPtr.use_count() << std::endl;
+    std::weak_ptr<int> myWeakPtr1(mySharedPtr);
+    std::weak_ptr<int> myWeakPtr2(myWeakPtr1);
+    std::cout << "after adding weak pointers, shared pointer count = " << mySharedPtr.use_count() << std::endl;
     mySharedPtr.reset(new int);
-    if (myWeakPtr2.expired()) cout << "weak pointer expired!" << std::endl;
+    if (myWeakPtr2.expired()) std::cout << "weak pointer expired!" << std::endl;
 
     // construct a unique pointer
-    unique_ptr<int> uniquePtr(new int);
+    std::unique_ptr<int> uniquePtr(new int);
     // (1) shared pointer from unique pointer
-    shared_ptr<int> sharedPtr1 = std::move(uniquePtr);
+    std::shared_ptr<int> sharedPtr1 = std::move(uniquePtr);
     // (2) shared pointer from weak pointer
-    weak_ptr<int> weakPtr(sharedPtr1);
-    shared_ptr<int> sharedPtr2 = weakPtr.lock();
+    std::weak_ptr<int> weakPtr(sharedPtr1);
+    std::shared_ptr<int> sharedPtr2 = weakPtr.lock();
     // (3) raw pointer from shared (or unique) pointer
     int *rawPtr = sharedPtr2.get();
     delete rawPtr;
