@@ -86,7 +86,6 @@ void smart_pointers_examples() {
 }
 
 
-int main()
-{
+int main() {
     smart_pointers_examples();
 }
