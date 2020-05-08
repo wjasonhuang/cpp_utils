@@ -20,12 +20,12 @@
 http://www.cplusplus.com/reference/memory/
 
 unique_ptr<type> name(new type)
-unique_ptr::get()		the stored pointer points to the object managed by the unique_ptr or nullptr if unique_ptr is empty
+unique_ptr::get()		returns the stored pointer points to the object managed by the unique_ptr or nullptr if empty
 
 shared_ptr<type> name(new type)
 shared_ptr::get()
 shared_ptr::reset()		deletes managed object and acquires new pointer
-shared_ptr::use_count()		number of shared_ptr objects that share ownership over the same pointer, 0 if shared_ptr is empty
+shared_ptr::use_count()	number of shared_ptr objects that share ownership over the same pointer, 0 if empty
 
 weak_ptr<type> name(weak_ptr or shared_ptr)
 weak_ptr::expired()		returns whether the weak_ptr object is either empty or no more shared_ptr it belongs to
