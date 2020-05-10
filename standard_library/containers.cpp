@@ -54,6 +54,7 @@ vector::insert()        inserts new elements to a specified location
 vector::pop_back()      removes the last element in the vector, effectively reducing the container size by one
 vector::erase()         removes from the vector either a single element ( position ) or a range of elements ( [first,last) )
 vector::clear()         removes all elements
+vector::assign()        assigns new contents, replacing its current contents, and modifying its size accordingly
 */
 
 #include <vector>
