@@ -50,6 +50,7 @@ vector::size()          returns the number of elements in the vector
 vector::front()         returns a reference to the first element in the vector
 vector::back()          returns a reference to the last element in the vector
 vector::push_back()     adds a new element after its current last element
+vector::emplace_back()  inserts a new element (constructed in place using args as the arguments for its constructor) at the end
 vector::insert()        inserts new elements to a specified location
 vector::pop_back()      removes the last element in the vector, effectively reducing the container size by one
 vector::erase()         removes from the vector either a single element ( position ) or a range of elements ( [first,last) )
