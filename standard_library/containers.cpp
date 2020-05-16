@@ -56,22 +56,22 @@ vector::pop_back()      removes the last element in the vector, effectively redu
 vector::erase()         removes from the vector either a single element ( position ) or a range of elements ( [first,last) )
 vector::clear()         removes all elements
 vector::assign()        assigns new contents, replacing its current contents, and modifying its size accordingly
+
+Iteration               for (auto ai : a) / for (int i = 0; i < a.size(); i++) / for (auto it = a.begin(); it != a.end(); it++)
 */
 
 #include <vector>
 void vector_examples() {
     cout << "vector examples:\n";
     vector<int> a = {101, 102, 103};
-    for (auto i : a)
-        cout << "1: " << i << "\n";
+    vector<vector<int>> b(2, vector<int>(3, 100));
     a.back() = 104;
     a.insert(a.begin()+1, 200);
-    a.push_back(105);
-    for (int i = 0; i < a.size(); i++)
-        cout << "2: " << a[i] << "\n";
-    a.erase(a.begin(), a.begin() +3);
-    for (vector<int>::iterator i = a.begin(); i != a.end(); i++)
-        cout << "3: " << *i << "\n";
+    for (auto it = a.begin(); it != a.end(); it++)
+        cout << "a3: " << *it << "\n";
+    for (int i = 0; i < 2; i++)
+        for (int j = 0; j < 3; j++)
+            cout << "b " << i << " " << j << " : " << b[i][j] << endl;
 }
 
 
