@@ -9,7 +9,7 @@
 
 # Compile & Debug
     // Compile all at once
-    g++ main.cpp code1.cpp code2.cpp && a.out
+    g++ main.cpp code1.cpp code2.cpp
     
     // Compile in steps
     g++ -c *.cpp    // preprocessor runs and executes any statement beginning with #, such as #include statements
@@ -17,6 +17,9 @@
     g++ *.o         // object files are "linked" together to make a single executable
     ./a.out         // a.out is the executable
 
+    // Compile multithreaded code
+    g++ main.cpp -pthread -o main
+    
     // Compile wtih debugging symbols
     g++ -g main.cpp
     gdb a.out
