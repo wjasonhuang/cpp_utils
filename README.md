@@ -17,6 +17,9 @@
     g++ *.o         // object files are "linked" together to make a single executable
     ./a.out         // a.out is the executable
 
+    // Compile multithreaded code
+    g++ main.cpp -o main -pthread
+    
     // Compile wtih debugging symbols
     g++ -g main.cpp
     gdb a.out
