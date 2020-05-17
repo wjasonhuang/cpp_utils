@@ -9,9 +9,9 @@ thread::joinable()              returns whether the thread object is joinable
 thread::hardware_concurrency()  [static] returns the number of hardware thread contexts
 
 namespace std::this_thread
-this_thread::get_id()			returns the thread id of the calling thread
-this_thread::sleep_until()		blocks the calling thread until abs_time
-this_thread::sleep_for()		blocks the calling thread during the span of time specified by rel_time
+this_thread::get_id()           returns the thread id of the calling thread
+this_thread::sleep_until()      blocks the calling thread until abs_time
+this_thread::sleep_for()        blocks the calling thread during the span of time specified by rel_time
 */
 
 #include <chrono>
