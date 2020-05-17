@@ -11,10 +11,9 @@
     * cp a pointer to a object, cp->func() and (*cp).func() are equivalent
 */
 
-
 #include <iostream>
 #include <string>
-
+#include <memory>
 
 /*
 http://www.cplusplus.com/reference/memory/
@@ -31,8 +30,6 @@ weak_ptr<type> name(weak_ptr or shared_ptr)
 weak_ptr::expired()		returns whether the weak_ptr object is either empty or no more shared_ptr it belongs to
 weak_ptr::lock()		returns a shared_ptr with the information preserved by the weak_ptr object if not expired
 */
-
-#include <memory>
 
 class MyClass {
 private:
