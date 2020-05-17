@@ -82,7 +82,6 @@ void smart_pointers_examples() {
     delete rawPtr;
 }
 
-
 int main() {
     smart_pointers_examples();
 }
