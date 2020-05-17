@@ -4,8 +4,8 @@ http://www.cplusplus.com/reference/thread/thread/
 thread name(Fn, Args)
 
 thread::detach()                detaches the thread from the calling thread, allowing them to execute independently
-thread::join()				    the function returns when the thread execution has completed
-thread::joinable()			    returns whether the thread object is joinable
+thread::join()                  the function returns when the thread execution has completed
+thread::joinable()              returns whether the thread object is joinable
 thread::hardware_concurrency()  [static] returns the number of hardware thread contexts
 
 namespace std::this_thread
