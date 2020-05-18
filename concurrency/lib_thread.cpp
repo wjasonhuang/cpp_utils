@@ -1,7 +1,7 @@
 /*
 http://www.cplusplus.com/reference/thread/thread/
 
-thread name(Fn, Args)
+thread name(fn, args)
 
 thread::detach()                detaches the thread from the calling thread, allowing them to execute independently
 thread::join()                  the function returns when the thread execution has completed
@@ -19,34 +19,36 @@ this_thread::sleep_for()        blocks the calling thread during the span of tim
 #include <thread>
 #include <vector>
 
-void threadFunction1() {
-    std::this_thread::sleep_for(std::chrono::milliseconds(10)); // simulate work
-    std::cout << std::this_thread::get_id() << ": finished work in threadFunction1\n";
-}
-
-void threadFunction2(int id, int& ret) {
-    std::this_thread::sleep_for(std::chrono::milliseconds(20)); // simulate work
-    std::cout << id << ": finished work in threadFunction2\n";
-    ret += 5;
+void by_function() {
+    std::cout << "\nExamples of starting threads with function\n";
+    std::thread tf1([](){
+        std::this_thread::sleep_for(std::chrono::milliseconds(10)); // simulate work
+        std::cout << std::this_thread::get_id() << ": finished work in thread function 1\n";
+    });
+    int ret = 0;
+    std::thread tf2([](auto id, int& ret) {
+        std::this_thread::sleep_for(std::chrono::milliseconds(20)); // simulate work
+        std::cout << id << ": finished work in thread function 2\n";
+        ret += 5;
+    }, std::this_thread::get_id(), std::ref(ret));    // need to mark explicitly using std::ref when passing by reference
+    tf1.join(); tf2.join();
+    std::cout << "ret = " << ret << "\n\n";
 }
 
 class threadClass {
 public:
+    threadClass() : _id(0) {}
+    void addId(int id) { _id = id; }
     void operator()() { std::cout << std::this_thread::get_id() << ": threadClass object has been created\n"; }
+    void printId() { std::cout << "threadClass id = " << _id << std::endl; }
+
+private:
+    int _id;
 };
 
-int main()
-{
-    int ret = 0;
-
-    std::cout << "Number of hardware thread contexts: " << std::thread::hardware_concurrency() << "\n";
+void by_class() {
+    std::cout << "\nExamples of starting threads with class\n";
     std::vector<std::thread> threads;
-
-    // create thread with function
-    std::thread tf1(threadFunction1);
-    threads.push_back(std::move(tf1));
-    std::thread tf2(threadFunction2, 77, std::ref(ret));    // need to mark explicitly using std::ref when passing by reference
-    threads.push_back(std::move(tf2));
 
     // create thread with function objects
     // std::thread t(Vehicle()) would be interpreted as a regular function named t
@@ -55,6 +57,22 @@ int main()
     std::thread t3{ threadClass() };                // Use uniform initialization with braces
     threads.push_back(std::move(t1)); threads.push_back(std::move(t2)); threads.push_back(std::move(t3));
 
-    for (auto& it : threads) it.join();
-    std::cout << "ret = " << ret << "\n";
+    threadClass tc1, tc2;
+    std::shared_ptr<threadClass> tc3(new threadClass);
+    threads.emplace_back(std::thread(&threadClass::addId, tc1, 1));
+    threads.emplace_back(std::thread(&threadClass::addId, &tc2, 2));
+    threads.emplace_back(std::thread(&threadClass::addId, tc3, 3));
+
+
+    for (auto& t : threads) t.join();
+    tc1.printId();
+    tc2.printId();
+    tc3->printId();
+}
+
+int main()
+{
+    std::cout << "Number of hardware thread contexts: " << std::thread::hardware_concurrency() << "\n";
+    by_function();
+    by_class();
 }
