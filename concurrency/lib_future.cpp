@@ -1,7 +1,7 @@
 /*
 http://www.cplusplus.com/reference/future/
 
-promise<type> name
+promise<type> name          type can be void
 promise::get_future()       returns a future object associated with the object's shared state
 promise::set_value()        stores val as the value in the shared state, which becomes ready
 promise::set_exception()    stores the exception pointer p in the shared state, which becomes ready
