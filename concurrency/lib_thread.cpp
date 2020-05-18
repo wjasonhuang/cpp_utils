@@ -59,10 +59,10 @@ void by_class() {
 
     threadClass tc1, tc2;
     std::shared_ptr<threadClass> tc3(new threadClass);
+    // remember to pass an instance of class first then arguments of the class member function
     threads.emplace_back(std::thread(&threadClass::addId, tc1, 1));
     threads.emplace_back(std::thread(&threadClass::addId, &tc2, 2));
     threads.emplace_back(std::thread(&threadClass::addId, tc3, 3));
-
 
     for (auto& t : threads) t.join();
     tc1.printId();
