@@ -1,7 +1,7 @@
 /*
 http://www.cplusplus.com/reference/thread/thread/
 
-thread name(fn, args)
+std::thread name(fn, args)
 
 thread::detach()                detaches the thread from the calling thread, allowing them to execute independently
 thread::join()                  the function returns when the thread execution has completed
