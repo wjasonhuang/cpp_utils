@@ -13,3 +13,6 @@
 
 ## Program a Concurrent Traffic Simulation
 * https://github.com/udacity/CppND-Program-a-Concurrent-Traffic-Simulation
+
+## Capstone Snake Game
+* https://github.com/udacity/CppND-Capstone-Snake-Game
