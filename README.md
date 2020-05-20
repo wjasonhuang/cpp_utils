@@ -7,7 +7,9 @@
 * It is basically a header file that includes every standard library.
 * Using it would include a lot of unnecessary stuff and increases compilation time.
 
-# Compile & Debug
+# MingW-64
+* http://mingw-w64.org/doku.php/download -> MingW-W64-builds
+* Add environment variable	C:\Program Files (x86)\mingw-w64\i686-8.1.0-posix-dwarf-rt_v6-rev0\mingw32\bin
     // Compile all at once
     g++ main.cpp code1.cpp code2.cpp
     
@@ -23,3 +25,6 @@
     // Compile wtih debugging symbols
     g++ -g main.cpp
     gdb a.out
+
+# CMake
+* https://cmake.org/download/
