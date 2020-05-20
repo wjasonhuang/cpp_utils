@@ -24,6 +24,10 @@
     gdb a.out
 ```
 
+## OpenCV
+* https://opencv.org/releases/
+* https://www.youtube.com/watch?v=Qb9n8gQ0RwA
+
 # Style
 * http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#nl-naming-and-layout-rules
 * https://google.github.io/styleguide/cppguide.html
