@@ -26,7 +26,7 @@
 
 ## SDL
 * https://libsdl.org/index.php goto Download SDL 2.0
-* CodeBlocks Setup: https://www.youtube.com/watch?v=Gj3iXwvKmUY
+* CodeBlocks Setup: https://www.youtube.com/watch?v=lJRgwbRVtP0
 
 # Style
 * http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#nl-naming-and-layout-rules
