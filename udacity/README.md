@@ -1,7 +1,7 @@
 # C++ Nanodegree Program
 * https://www.udacity.com/course/c-plus-plus-nanodegree--nd213
 
-## OpenStreetMap Route Planner
+## Route Planning Project
 * https://github.com/udacity/CppND-Route-Planning-Project
 
 ## System Monitor
