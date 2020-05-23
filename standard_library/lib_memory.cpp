@@ -9,13 +9,8 @@
     * in both C and C++, the * binds to the declarator, not the type specifier, e.g. `int *p, *q, *r;`
     * to retrieve the object a pointer is pointing tomthe * symbol can be used again, e.g. `*i`
     * cp a pointer to a object, cp->func() and (*cp).func() are equivalent
-*/
 
-#include <iostream>
-#include <string>
-#include <memory>
 
-/*
 http://www.cplusplus.com/reference/memory/
 
 unique_ptr<type> name(new type)
@@ -30,6 +25,10 @@ weak_ptr<type> name(weak_ptr or shared_ptr)
 weak_ptr::expired()		returns whether the weak_ptr object is either empty or no more shared_ptr it belongs to
 weak_ptr::lock()		returns a shared_ptr with the information preserved by the weak_ptr object if not expired
 */
+
+#include <iostream>
+#include <string>
+#include <memory>
 
 class MyClass {
 private:
