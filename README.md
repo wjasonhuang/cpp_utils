@@ -37,4 +37,4 @@ http://www.cplusplus.com/reference/
 
 ## #include <bits/stdc++.h>
 * It is basically a header file that includes every standard library
-* Using it would include a lot of unnecessary stuff and increases compilation time.
+* Using it would include a lot of unnecessary stuff and increases compilation time
