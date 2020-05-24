@@ -28,10 +28,13 @@
 * https://libsdl.org/index.php goto Download SDL 2.0
 * CodeBlocks Setup: https://www.youtube.com/watch?v=lJRgwbRVtP0
 
-# Style
+# Reference
+http://www.cplusplus.com/reference/
+
+## Style
 * http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#nl-naming-and-layout-rules
 * https://google.github.io/styleguide/cppguide.html
 
-# #include <bits/stdc++.h>
+## #include <bits/stdc++.h>
 * It is basically a header file that includes every standard library
 * Using it would include a lot of unnecessary stuff and increases compilation time.
