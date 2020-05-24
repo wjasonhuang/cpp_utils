@@ -10,7 +10,6 @@ vector::begin()         returns an iterator to point at the first element of a C
 vector::end()           returns an iterator to point at past-the-end element of a C++ vector
 vector::rbegin()        return reverse iterator to reverse beginning
 vector::rend()          return reverse iterator to reverse end
-
 vector::empty()         returns whether the vector is empty (i.e. whether its size is 0)
 vector::size()          returns the number of elements in the vector
 
