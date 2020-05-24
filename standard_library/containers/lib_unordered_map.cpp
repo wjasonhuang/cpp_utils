@@ -1,5 +1,5 @@
 /*
-http://www.cplusplus.com/reference/unordered_unordered_map/
+http://www.cplusplus.com/reference/unordered_map/
 unordered_map:          hash table, insert / erase / find O(1)
 unordered_multimap:     similar to unordered_map except multiple elements can have equivalent keys
 
