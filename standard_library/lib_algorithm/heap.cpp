@@ -18,20 +18,24 @@ void print_vector(auto a) { for (auto ai : a) std::cout << " " << ai; std::cout 
 bool comp(int a, int b) { return a >= b; }
 
 void heap_examples() {
-    std::vector<int> a{1, 2, 3, 4, 5};
+    std::vector<int> a{3, 2, 4, 1, 5};
+    // make a min heap by reversing < comp function
+    std::make_heap(a.begin(), a.end(), comp);
+    print_vector(a);
+
+    // default make a max heap
     std::make_heap(a.begin(), a.end());
     print_vector(a);
+
     a.push_back(6);
     std::push_heap(a.begin(), a.end());
     print_vector(a);
+
     std::pop_heap(a.begin(), a.end());
     print_vector(a);
 
-    // comp function returns true if first < second and make a max heap
-    std::make_heap(a.begin(), a.end(), comp);
-    print_vector(a);
-    std::cout << std::is_heap(a.begin(), a.end(), comp) << '\n';
-    std::cout << std::is_heap(a.begin(), a.end()) << " " << *std::is_heap_until(a.begin(), a.end());
+    std::cout << "max heap? " << std::is_heap(a.begin(), a.end()) << '\n';
+    std::cout << "max heap bound: " << std::is_heap_until(a.begin(), a.end()) - a.begin();
 }
 
 int main() {
