@@ -12,6 +12,7 @@ vector::rbegin()        return reverse iterator to reverse beginning
 vector::rend()          return reverse iterator to reverse end
 vector::empty()         returns whether the vector is empty (i.e. whether its size is 0)
 vector::size()          returns the number of elements in the vector
+vector::resize()        resizes the container so that it contains n elements
 
 vector::front()         returns a reference to the first element in the vector
 vector::back()          returns a reference to the last element in the vector
@@ -32,12 +33,16 @@ using namespace std;
 
 int main() {
     vector<int> a = {101, 102, 103};
-    vector<vector<int>> b(2, vector<int>(3, 100));
+    vector<vector<int>> b(2, vector<int>(4, 1));
     a.back() = 104;
     a.insert(a.begin()+1, 200);
     for (auto it = a.begin(); it != a.end(); it++)
         cout << "a: " << *it << "\n";
-    for (int i = 0; i < 2; i++)
-        for (int j = 0; j < 3; j++)
-            cout << "b " << i << " " << j << " : " << b[i][j] << endl;
+    b.resize(4, vector<int>(2, 2));
+    for (int i = 0; i < b.size(); i++) {
+        cout << "b " << i << ":";
+        for (int j = 0; j < b[i].size(); j++)
+            cout << " " << b[i][j];
+        cout << endl;
+    }
 }
