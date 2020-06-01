@@ -5,11 +5,12 @@ typedef long long ll;
 typedef vector<int> vi;
 typedef vector<ll> vl;
 typedef vector<vi> vvi;
-
+#define rep2(i, a, b) for (auto i = (a); i < (b); i++)
+#define rep(i, a) rep2(i, 0, a)
 
 
 int solve() {
-    int n, ret;
+    int n;
     cin >> n;
 
     for (int i = 0; i < n; i++) {
@@ -17,7 +18,7 @@ int solve() {
     }
 
 
-    return ret;
+    return 0;
 }
 
 int main() {
