@@ -13,7 +13,7 @@ int solve() {
     int n;
     cin >> n;
 
-    for (int i = 0; i < n; i++) {
+    rep(i, n) {
         cin >> ;
     }
 
@@ -29,7 +29,7 @@ int main() {
 #endif
     int t = 1;
     // cin >> t;
-    for (int i = 0; i < t; i++) {
+    rep(i, t) {
         cout << solve() << endl;
     }
 }
