@@ -8,7 +8,6 @@ std::is_sorted()        returns true if [first,last) is sorted into ascending or
 std::is_sorted_until()  returns an iterator to the first element which does not follow an ascending order
 std::nth_element()      rearranges [first,last) elements preceding nth are less than it and elements following it are greater
 
-
 Heap:
 std::push_heap()        extends heap range from [first, last-1) to [first,last)
 std::pop_heap()         moves the element with the highest value in [first, last) to (last-1)
