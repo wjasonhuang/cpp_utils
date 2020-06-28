@@ -11,7 +11,8 @@ set<int, decltype(cmp)> s(cmp);
 set::begin() / set::end() / set::rbegin() / map::rend()
 set::empty() / set::size()
 
-
+set::insert(val / InputIterator first, InputIterator last)
+            insert val or copies of elements in [first, last), set does not inserted if val already in the container
 set::erase(iterator position / const value_type& / iterator first, iterator last)
             removes a single element / removes all elements with target value / elements in range[first, last)
 set::clear()
@@ -21,10 +22,6 @@ set::lower_bound(const value_type&)       returns an iterator to the first eleme
 set::upper_bound(const value_type&)       returns an iterator to the first element in the container whose key > target key
 set::equal_range(const value_type&)       returns pair<map::lower_bound, map::upper_bound>
 
-Differences:
-set::insert(val / InputIterator first, InputIterator last)
-            insert val or copies of elements in [first, last), set does not inserted if val already in the container
-            
 Tips:
 to erase only one occurrence of the value in multiset, use set::erase(set::find(val))
 to find the last element of the set, use *set::rbegin()
