@@ -12,7 +12,7 @@ set::begin() / set::end() / set::rbegin() / map::rend()
 set::empty() / set::size()
 
 set::insert(val / InputIterator first, InputIterator last)
-            insert val or copies of elements in [first, last), set does not inserted if val already in the container
+            insert val or copies of elements in [first, last), set does not insert if val already exists
 set::erase(iterator position / const value_type& / iterator first, iterator last)
             removes a single element / removes all elements with target value / elements in range[first, last)
 set::clear()
