@@ -24,6 +24,10 @@ set::equal_range(const value_type&)       returns pair<map::lower_bound, map::up
 Differences:
 set::insert(val / InputIterator first, InputIterator last)
             insert val or copies of elements in [first, last), set does not inserted if val already in the container
+            
+Tips:
+to erase only one occurrence of the value in multiset, use set::erase(set::find(val))
+to find the last element of the set, use *set::rbegin()
 */
 
 #include <iostream>
