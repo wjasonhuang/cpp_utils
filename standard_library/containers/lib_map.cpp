@@ -21,7 +21,7 @@ map::equal_range(const key_type&)       returns pair<map::lower_bound, map::uppe
 Differences:
 map::operator[]                         does not exist in multimap
 map::insert(pair(key, val) / InputIterator first, InputIterator last)
-            insert (key, val) or copies of elements in [first, last), map does not inserted if key already in the container
+            insert (key, val) or copies of elements in [first, last), map does not insert if key already exists
 */
 
 #include <iostream>
