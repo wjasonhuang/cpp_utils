@@ -5,7 +5,7 @@
 
 ## MingW-64
 * http://mingw-w64.org/doku.php/download goto MingW-W64-builds
-* Add environment variable	C:\Program Files (x86)\mingw-w64\i686-8.1.0-posix-dwarf-rt_v6-rev0\mingw32\bin
+* Add environment variable: C:\Program Files (x86)\mingw-w64\i686-8.1.0-posix-dwarf-rt_v6-rev0\mingw32\bin
 ```
     // Compile all at once
     g++ main.cpp code1.cpp code2.cpp
@@ -24,9 +24,14 @@
     gdb a.out
 ```
 
+## Visual Studio
+* https://visualstudio.microsoft.com/downloads/
+* To enable #include <bits/stdc++.h>, add stdc++.h to the following
+* C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\bits\stdc++.h
+
 ## SDL
 * https://libsdl.org/index.php goto Download SDL 2.0
-* CodeBlocks Setup: https://www.youtube.com/watch?v=lJRgwbRVtP0
+
 
 # Reference
 http://www.cplusplus.com/reference/
@@ -37,6 +42,5 @@ http://www.cplusplus.com/reference/
 
 ## #include <bits/stdc++.h>
 * A header file that includes every standard library
-* Only exist in GCC compiler, need to manually add folder bits and file stdc++.h for Visual Studio
-* VS C++ PATH: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\bits
+* Only exist in GCC compiler, need to manually add for Visual Studio
 * Source code: http://gcc.gnu.org/onlinedocs/gcc-4.8.0/libstdc++/api/a01541_source.html
