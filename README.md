@@ -36,5 +36,7 @@ http://www.cplusplus.com/reference/
 * https://google.github.io/styleguide/cppguide.html
 
 ## #include <bits/stdc++.h>
-* It is basically a header file that includes every standard library
-* Using it would include a lot of unnecessary stuff and increases compilation time
+* A header file that includes every standard library
+* Only exist in GCC compiler, need to manually add folder bits and file stdc++.h for Visual Studio
+* VS C++ PATH: C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.26.28801\include\bits
+* Source code: http://gcc.gnu.org/onlinedocs/gcc-4.8.0/libstdc++/api/a01541_source.html
