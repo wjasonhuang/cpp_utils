@@ -21,11 +21,12 @@ std::is_heap_until()    returns an iterator to the first element which is not in
 #include <iostream>
 #include <vector>
 
-void print(auto a) { for (auto ai : a) std::cout << " " << ai; std::cout << '\n'; }
+template<class T>
+void print(T a) { for (auto ai : a) std::cout << " " << ai; std::cout << '\n'; }
 
 void sorting_examples() {
     std::cout << "\nSorting Examples:\n";
-    std::vector<int> a{3, 2, 4, 1, 5};
+    std::vector<int> a{ 3, 2, 4, 1, 5 };
 
     // using comp function instead of operator<
     std::sort(a.begin(), a.end(), [](int a, int b) { return a >= b; });
@@ -41,10 +42,11 @@ void sorting_examples() {
 
 void heap_examples() {
     std::cout << "\nHeap Examples:\n";
-    std::vector<int> a{3, 2, 4, 1, 5};
+    std::vector<int> a{ 3, 2, 4, 1, 5 };
 
     // make a min heap by reversing < comp function
-    std::make_heap(a.begin(), a.end(), [](int a, int b) { return a >= b; });
+    auto cmp = [](int a, int b) { return a > b; }; // !!! a >= b will lead to unexpected crash 
+    std::make_heap(a.begin(), a.end(), cmp);
     print(a);
 
     // default make a max heap
