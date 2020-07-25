@@ -6,25 +6,25 @@ vector<type> name (const vector& x)
 vector<type> name {element1, element2, ...}
 vector<type>::iterator
 
-vector::begin()         returns an iterator to point at the first element of a C++ vector
-vector::end()           returns an iterator to point at past-the-end element of a C++ vector
-vector::rbegin()        return reverse iterator to reverse beginning
-vector::rend()          return reverse iterator to reverse end
-vector::empty()         returns whether the vector is empty (i.e. whether its size is 0)
-vector::size()          returns the number of elements in the vector
+vector::begin()         returns an iterator to point at the first element
+vector::end()           returns an iterator to point at past-the-end element
+vector::rbegin()        reverse iterator
+vector::rend()
+vector::empty()         true if size is 0
+vector::size()
 vector::resize()        resizes the container so that it contains n elements
 
-vector::front()         returns a reference to the first element in the vector
-vector::back()          returns a reference to the last element in the vector
-vector::push_back()     adds a new element after its current last element
+vector::front()         returns a reference to the first element
+vector::back()          returns a reference to the last element
+vector::push_back()
 vector::emplace_back()  inserts a new element (constructed in place using args as the arguments for its constructor) at the end
 vector::insert()        inserts new elements to a specified location
-vector::pop_back()      removes the last element in the vector, effectively reducing the container size by one
+vector::pop_back()
 vector::erase()         removes from the vector either a single element ( position ) or a range of elements ( [first,last) )
-vector::clear()         removes all elements
+vector::clear()
 vector::assign()        assigns new contents, replacing its current contents, and modifying its size accordingly
 
-Iteration               for (auto ai : a) / for (int i = 0; i < a.size(); i++) / for (auto it = a.begin(); it != a.end(); it++)
+iteration               for (auto ai : a) / for (int i = 0; i < a.size(); i++) / for (auto it = a.begin(); it != a.end(); it++)
 */
 
 #include <iostream>
