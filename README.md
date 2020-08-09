@@ -43,4 +43,5 @@ http://www.cplusplus.com/reference/
 ## #include <bits/stdc++.h>
 * A header file that includes every standard library
 * Only exist in GCC compiler, need to manually add for Visual Studio
+* https://codeforces.com/blog/entry/13981
 * Source code: http://gcc.gnu.org/onlinedocs/gcc-4.8.0/libstdc++/api/a01541_source.html
