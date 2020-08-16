@@ -15,6 +15,9 @@ std::make_heap()        rearranges [first,last) to form a max heap
 std::sort_heap()        sorts [first,last) into ascending order
 std::is_heap()          returns true if [first,last) forms a heap
 std::is_heap_until()    returns an iterator to the first element which is not in a valid heap position
+
+Other:
+std::unique()           removes all but the first element from every consecutive group of equivalent elements in the range [first,last)
 */
 
 #include <algorithm>
@@ -61,10 +64,18 @@ void heap_examples() {
     print(a);
 
     std::cout << "max heap? " << std::is_heap(a.begin(), a.end()) << '\n';
-    std::cout << "max heap until: " << std::is_heap_until(a.begin(), a.end()) - a.begin();
+    std::cout << "max heap until: " << std::is_heap_until(a.begin(), a.end()) - a.begin() << "\n";
+}
+
+void other_examples() {
+    std::cout << "\nOther Examples:\n";
+    std::vector<int> a = { 10, 20, 20, 30, 30, 30, 20, 10, 10 };
+    a.resize(std::unique(a.begin(), a.end()) - a.begin());
+    print(a);
 }
 
 int main() {
     sorting_examples();
     heap_examples();
+    other_examples();
 }
