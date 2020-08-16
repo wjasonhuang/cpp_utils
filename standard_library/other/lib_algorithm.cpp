@@ -29,7 +29,7 @@ void sorting_examples() {
     std::vector<int> a{ 3, 2, 4, 1, 5 };
 
     // using comp function instead of operator<
-    std::sort(a.begin(), a.end(), [](int a, int b) { return a >= b; });
+    std::sort(a.begin(), a.end(), [](int a, int b) { return a > b; });
     print(a);
 
     std::cout << "Sorted? " << std::is_sorted(a.begin(), a.end()) << '\n';
