@@ -1,6 +1,8 @@
-#include <numeric>
-#include <vector>
-using namespace std;
+#include <algorithm>    // std::swap
+#include <numeric>      // std:iota
+#include <vector>       // std:vector
+using std::vector;
+using std::swap;
 
 class UnionFindSet {
 public:
