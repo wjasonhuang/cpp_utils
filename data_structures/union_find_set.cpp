@@ -14,9 +14,7 @@ public:
         iota(p.begin(), p.end(), 0);
     }
 
-    int find(int v) {
-        return (p[v] == v ? v : p[v] = find(p[v]));
-    }
+    int find(int v) { return (p[v] == v ? v : p[v] = find(p[v])); }
 
     bool merge(int v1, int v2) {
         v1 = find(v1);
