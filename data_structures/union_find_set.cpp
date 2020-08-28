@@ -13,9 +13,9 @@ public:
     
     bool merge(int v1, int v2) {
         v1 = find(v1); v2 = find(v2);
-        if (v1 == v2) return true;
+        if (v1 == v2) return false;
         if (c[v1] < c[v2]) swap(v1, v2);
         p[v2] = v1; c[v1] += c[v2];
-        return false;
+        return true;
     }
 };
