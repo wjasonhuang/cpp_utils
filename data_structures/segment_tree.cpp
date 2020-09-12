@@ -3,6 +3,9 @@ using std::vector;
 
 class SegmentTree {
 public:
+    vector<int> tree;
+    int n;
+    
     void build(vector<int>& arr) {
         n = arr.size();
         tree = vector<int>(n, 0);
@@ -22,8 +25,4 @@ public:
         }
         return tot;
     }
-
-private:
-    vector<int> tree;
-    int n;
 };
