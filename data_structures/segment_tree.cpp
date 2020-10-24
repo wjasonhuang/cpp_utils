@@ -6,6 +6,8 @@ public:
     vector<int> tree;
     int n;
     
+    SegmentTree(int size, int val) : n(size), tree(2 * size, val) {};
+    
     void build(vector<int>& arr) {
         n = arr.size();
         tree = vector<int>(n, 0);
